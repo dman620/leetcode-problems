@@ -61,6 +61,27 @@ that was all I needed to make the algorithm.  It works just like how
 you'd imagine.  I think in the worst case this algorithm is still 
 O(n<sup>2</sup>), but it clearly runs much faster in the average case.
 
+## 4. Median of Two Sorted Arrays
+
+https://leetcode.com/problems/median-of-two-sorted-arrays/
+
+### My Submission(s):
+
+https://leetcode.com/submissions/detail/471607223/
+
+### Thoughts:
+
+*3/23/2021*
+
+For this problem, I spent significant time in the analysis and design phase.  I used my notebook to draw the problem out and only started coding once I was satisfied with my pseudocode.  I 
+realized that if the contents of the parameters were in the same sorted list, then the complexity would be O(1).  So, the entire runtime complexity of my program is used on an efficient 
+merge algorithm.  The algorithm will merge the arrays into one, preserving the sort order.  The algorithm is O(n + m) in the worst case.  The problem stated as a challenge that I could try 
+to make it O(log(n + m)).  I have no idea how to do that.  The algorithm is stated on the website to be in the top 98<sup>th</sup> percentile (runtime), though, so maybe it is O(log(n + 
+m)) for some reason. I'm not really sure how to verify whether this is true.  According to my calculations it should be O(n + m).
+
+I'm not sure why I haven't used methods before this problem.  I assumed that if I tried to include a method, then the code would not compile.  Either way, I believe that some of my other 
+submissions could be cleaned up by using methods.
+
 ## 7. Reverse Integer
 
 https://leetcode.com/problems/reverse-integer/
