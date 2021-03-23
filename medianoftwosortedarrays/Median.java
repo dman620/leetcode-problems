@@ -1,5 +1,8 @@
 package com.leetcode.medianoftwosortedarrays;
 
+//Author: Derek Mandl
+//Date: 3/23/2021
+//https://leetcode.com/problems/median-of-two-sorted-arrays/
 public class Median {
     public int[] sortedMerge(int[] num1, int[] num2){
         if(num1 == null) return num2;
