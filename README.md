@@ -82,6 +82,20 @@ m)) for some reason. I'm not really sure how to verify whether this is true.  Ac
 I'm not sure why I haven't used methods before this problem.  I assumed that if I tried to include a method, then the code would not compile.  Either way, I believe that some of my other 
 submissions could be cleaned up by using methods.
 
+## 5. Longest Palindromic Substring
+
+https://leetcode.com/problems/longest-palindromic-substring/
+
+### My Submission(s):
+
+https://leetcode.com/submissions/detail/472029387/
+
+### Thoughts:
+
+*3/24/2021*
+
+This one took two attempts.  My first idea was aimed to be efficient, but it turns out that it will fail on a conceptual level.  Either that, or I'd have to essentially create two different algorithms to detect whether there were an even or odd palindrome.  The original algorithm worked by checking each letter separately for palindrome.  In the worst case, it would be O(n), but it would be unable to detect even palindromes like "aabb" or "abba".  To change the original algorithm to account for even palindromes seemed insurmountable, so I just reversed the way the algorithm worked to identify the palindromes.  The first attempt started in the middle (and thus, assumed that the palindrome must be odd) and worked out.  The new algorithm works in the opposite way.  I start on the outside and identify matching letters.  If no match, then move on.  If a match is found then check for palindrome.  Since the algorithm starts with largest-gap pairs then we can return the substring as soon as a palindrome is found.  In order to find all possible pairs, I need to use a sliding window method.  But, unlike the other largest substring problem it is hard to skip unwanted chars.  This means that it is essentially a brute force method.  Truth be told, I thought that this concept of starting with larger-gap pairs would buy me more runtime but it runs very slow according to leetcode.com.  In terms of runtime it's in the bottom 8<sup>th</sup> percentile.  My thoughts about where the problem lies are as follows: The palindrome checker should run extremely fast because if there is no palindrome then it only executes m/2 (where m = length of substring being checked) statements in the worst case, and in the average case probably about one or two. In addition, the worst case for the palindrome checker is that there is a palindrome.  But if we reach that point then we just return immediately.  Therefore, I know that the palindrome checker is not the problem.  I suppose I will have to revisit this at a later time to think of a more efficient algorithm.
+
 ## 7. Reverse Integer
 
 https://leetcode.com/problems/reverse-integer/
